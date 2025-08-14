@@ -3,7 +3,7 @@ name: Build and Push Docker Image to ECR
 on:
   push:
     branches:
-      - main  # or master or whichever branch you want to trigger the workflow
+      - main  # or master, or whichever branch you want to trigger the workflow
 
 jobs:
   build:
@@ -28,7 +28,7 @@ jobs:
         with:
           region: ${{ secrets.AWS_REGION }}
 
-      # Step 4: Build Docker image (simple docker build)
+      # Step 4: Build Docker image
       - name: Build Docker image
         run: |
           docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.AWS_ECR_REPO }}:latest .
