@@ -28,11 +28,11 @@ jobs:
         with:
           region: ${{ secrets.AWS_REGION }}
 
-      # Step 4: Build Docker image (ensure the context is specified)
+      # Step 4: Build Docker image (simple docker build)
       - name: Build Docker image
         run: |
-          docker buildx build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.AWS_ECR_REPO }}:latest .
-        
+          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.AWS_ECR_REPO }}:latest .
+
       # Step 5: Push Docker image to ECR
       - name: Push Docker image to ECR
         run: |
