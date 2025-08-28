@@ -35,8 +35,7 @@ jobs:
       - name: Log in to Amazon ECR
         run: |
           echo "Logging in to ECR..."
-          aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 322736530834.dkr.ecr.ap-southeast-2.amazonaws.com
-
+          aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 322736530834.dkr.ecr.eu-north-1.amazonaws.com
       # Build the Docker image
       - name: Build Docker image
         run: docker build -t 322736530834.dkr.ecr.ap-southeast-2.amazonaws.com/react-app:latest .
