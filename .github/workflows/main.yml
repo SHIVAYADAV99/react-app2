@@ -43,4 +43,4 @@ jobs:
       # Push Docker image to AWS ECR
       - name: Push Docker image to AWS ECR
         run: |
-          docker push 322736530834.dkr.ecr.eu-north-1.amazonaws.com/react-app:latest
+          docker push 322736530834.dkr.ecr.eu-north-1.amazonaws.com/react-app2:latest
