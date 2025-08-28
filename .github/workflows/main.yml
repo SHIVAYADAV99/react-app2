@@ -37,8 +37,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t 322736530834.dkr.ecr.eu-north-1.amazonaws.com/react-app2:latest .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
 
       - name: Push Docker image to AWS ECR
         run: |
-          docker push 322736530834.dkr.ecr.eu-north-1.amazona
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
